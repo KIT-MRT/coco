@@ -1,0 +1,26 @@
+%YAML:1.0
+toast2:
+   preset:0
+   GPUNotCPU: 1
+   CPUCores: 12
+   GPUIndex: 0
+   dispMax: 126
+   slantedPlanes: 1
+   noiseReduce: 1
+   preProcDiffGaussWinRows: 15
+   preProcDiffGaussWinCols: 15
+   preProcCensusDistance: 4
+   preProcCensusSoftThreshold: 2
+   blockMatchWinRows: 11
+   blockMatchWinCols: 11
+   blockMatchSubPix: 1
+   slantedPlanesBase: 0.3
+   slantedPlanesGroundHeight: 1.2
+   slantedPlanesDistanceLeft: -1
+   slantedPlanesDistanceRight: -1
+   slantedPlanesRoll: 0
+   filterTexturedness: 0
+   filterSimilarity: 1
+   filterConsistency: 1
+   filterSpeckles: 1
+   outputFillGaps: 0

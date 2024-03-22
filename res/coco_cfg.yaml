@@ -1,0 +1,64 @@
+# image preprocessing mode
+# 0 : None
+# 1 : Undistort
+# 2 : Rectify
+# 3 : Align
+preproc: 0
+# number of consecutive observations per tracklet.
+maxTrackLength: 4
+# Feature bucketing in x and y direction,
+# the higher, the fewer features are used --> faster but less accurate
+bucketH: 50 #15 #75
+bucketW: 100 #30 #150
+# if last motion estimate is not good enough, one may RANSAC a new estimate
+motionRansacIters: 7
+motionRansacBaseThresh: 10
+motionRansacStartThresh: 30
+motionRansacTimeConstant: 1.
+# calibration is only observable for a moving camera
+minRotationForCalib: 0.015
+minTranslationForCalib: 0.2
+# after initial motion guess, you may bundle adjust
+# the motion chain with constant camera parameters in the
+# preprocessed camera model
+bundleAdjustMotion: 'true'
+# after initial motion guess and (optional) initial bundle adjust,
+# you may bundle adjust the motion chain with constant camera parameters
+# in the current camera model estimate
+bundleAdjustDistorted: 'true'
+# after (optional) bundle adjustment steps you may bundle adjust with
+# fixed distortion parameters
+reestimateProjection: 'true'
+# after all (optional) adjustment steps, you may use SGD steps to bundle
+# adjust with everything variable
+refineAll: 'true' #'false'
+# settings for SGD
+refinementSteps: 5
+refinementBatchSize: 16
+refinementLearningRate: 1e-9 #1e-6
+# regularitzation in bundle adjustment steps
+projectionRegularization: 0.1 # 0.1
+extrinsicsRegularization: 500. #1000.
+sphericalProjectionRegularization: 1.
+distortionRegularization: 75.
+# settings on what to optimize
+estimateTangentialDistortion: 'true' #'false'
+estimateK3: 'false'
+# limit processing time
+maxTime: 0.350
+# deactivate calibration completely
+calibrate: 'true'
+# I/O
+cameraFile: ''
+exportOnShutdown: 'false'
+exportRate: 100
+readLatest: 'false'
+#cameraFilePrefix: '/home/eike/papers/iv17/ims/scripts/data/genie/params/calib'
+cameraFilePrefix: '/home/kinzig/workspaces/ws_unicaragil/src/coco_ros_tool/calib/calib'
+# visualization
+visualizeMatches: 'false' #'true'
+# If you don't have a camera file yet, you may specify some but not necessarily all values here:
+baseLine: -0.297827958 # this is optional, if I don't know it, it is set to -1, i.e. unresolved scale
+focalLength: 780 # 600 # this is optional, if I don't know it, it is set half the image width, i.e. 90° FOV
+#centerX: 219.5 # 512 # this is optional, it is set to half the image width
+#centerY: 505 # 287 # this is optional, it is set to half the image height
