@@ -26,8 +26,8 @@
 #include <feature_tracking/visualization.h>
 
 #include <opencv2/core/eigen.hpp>
-#include "opencv2/highgui.hpp"
-#include "opencv2/imgproc.hpp"
+#include <opencv2/highgui.hpp>
+#include <opencv2/imgproc.hpp>
 
 //#define DEBUG_MODE
 //#define DEBUG_MODE_SPAM
